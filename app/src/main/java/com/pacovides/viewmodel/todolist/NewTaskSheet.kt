@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.pacovides.viewmodel.todolist.databinding.FragmentNewTaskSheetBinding
 
-class NewTaskSheet : BottomSheetDialogFragment() {
+class NewTaskSheet(var taskItem: TaskItem? = null) : BottomSheetDialogFragment() {
 
     private lateinit var binding: FragmentNewTaskSheetBinding
     private lateinit var taskViewModel: TaskViewModel
@@ -23,8 +23,8 @@ class NewTaskSheet : BottomSheetDialogFragment() {
     }
 
     private fun saveAction() {
-        taskViewModel.name.value = binding.taskName.text.toString()
-        taskViewModel.description.value = binding.taskDescription.text.toString()
+        val name = binding.taskName.text.toString()
+        val description = binding.taskDescription.text.toString()
         binding.taskName.setText("")
         binding.taskDescription.setText("")
         dismiss()

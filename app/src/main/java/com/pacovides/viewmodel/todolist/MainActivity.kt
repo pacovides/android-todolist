@@ -11,29 +11,29 @@ import com.pacovides.viewmodel.todolist.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var taskMainView: ActivityMainBinding
     private lateinit var taskViewModel: TaskViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        taskMainView = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(taskMainView.root)
         taskViewModel = ViewModelProvider(this).get(TaskViewModel::class.java)
-        binding.newTaskButton.setOnClickListener {
+        taskMainView.newTaskButton.setOnClickListener {
             NewTaskSheet().show(supportFragmentManager, "NewTaskSheet")
         }
 
-        taskViewModel.name.observe(this) {
-            binding.taskName.text = String.format("Name: %s", it)
-        }
+//        taskViewModel.name.observe(this) {
+//            taskMainView.taskName.text = String.format("Name: %s", it)
+//        }
+//
+//        taskViewModel.description.observe(this) {
+//            taskMainView.taskDescription.text = String.format("Is a %s", it)
+//        }
 
-        taskViewModel.description.observe(this) {
-            binding.taskDescription.text = String.format("Is a %s", it)
-        }
-
-        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(taskMainView.root) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
