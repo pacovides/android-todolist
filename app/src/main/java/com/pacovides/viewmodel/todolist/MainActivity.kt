@@ -9,8 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.pacovides.viewmodel.todolist.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
-
+    
     private lateinit var taskMainView: ActivityMainBinding
     private lateinit var taskViewModel: TaskViewModel
 
@@ -24,14 +23,6 @@ class MainActivity : AppCompatActivity() {
         taskMainView.newTaskButton.setOnClickListener {
             NewTaskSheet().show(supportFragmentManager, "NewTaskSheet")
         }
-
-//        taskViewModel.name.observe(this) {
-//            taskMainView.taskName.text = String.format("Name: %s", it)
-//        }
-//
-//        taskViewModel.description.observe(this) {
-//            taskMainView.taskDescription.text = String.format("Is a %s", it)
-//        }
 
         ViewCompat.setOnApplyWindowInsetsListener(taskMainView.root) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

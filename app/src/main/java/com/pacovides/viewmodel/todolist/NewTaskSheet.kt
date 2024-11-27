@@ -43,7 +43,6 @@ class NewTaskSheet(private val taskItem: TaskItem? = null) : BottomSheetDialogFr
         } else {
             taskViewModel.updateTaskItem(taskItem.id, name, description)
         }
-
         binding.taskName.setText("")
         binding.taskDescription.setText("")
         dismiss()

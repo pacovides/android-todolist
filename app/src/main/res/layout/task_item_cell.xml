@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/taskCellContainer"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    app:cardCornerRadius="5dp"
+    android:layout_margin="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/completeTaskButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleY="1.5"
+            android:scaleX="1.5"
+            android:layout_marginHorizontal="15dp"
+            android:src="@drawable/check_box_blank_24"
+            android:backgroundTint="@android:color/transparent"
+            android:contentDescription="@string/checkbox_content_description" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/task_name_placeholder"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            style="@style/TextAppearance.AppCompat.Title" />
+
+        <TextView
+            android:id="@+id/dueDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/task_due_placeholder"
+            android:layout_marginHorizontal="10dp"
+            android:layout_gravity="center"
+            style="@style/TextAppearance.AppCompat" />
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
