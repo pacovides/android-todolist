@@ -3,8 +3,10 @@
     <string name="task_name_placeholder">Task Name</string>
     <string name="task_description_placeholder">Task Description</string>
     <string name="new_task_button">New Task</string>
-    <string name="new_task_sheet_title">New Task</string>
-    <string name="new_task_name_hint">Name</string>
-    <string name="new_task_description_hint">Description</string>
-    <string name="new_task_save_button">Save</string>
+    <!--Bottom Sheet-->
+    <string name="bottom_sheet_task_title_new_task">New Task</string>
+    <string name="bottom_sheet_task_title_edit_task">Edit Task</string>
+    <string name="bottom_sheet_name_hint">Name</string>
+    <string name="bottom_sheet_description_hint">Description</string>
+    <string name="bottom_sheet_save_button">Save</string>
 </resources>
